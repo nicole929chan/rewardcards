@@ -1,0 +1,180 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+.bg-white {
+  background: #fff;
+}
+
+.bg-primary {
+  background: #f5f4ef;
+}
+
+.bg-100 {
+  background: #ece9e2;
+}
+
+.bg-200 {
+  background: #cec8bc;
+}
+
+.bg-300 {
+  background: #bbaf95;
+}
+
+.bg-400 {
+  background: #8c8477;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.text-primary {
+  color: #f5f4ef;
+}
+
+.text-100 {
+  color: #ece9e2;
+}
+
+.text-200 {
+  color: #cec8bc;
+}
+
+.text-300 {
+  color: #bbaf95;
+}
+
+.text-400 {
+  color: #8c8477;
+}
+
+.text-100_ {
+  color: #eaeaea;
+}
+
+.text-200_ {
+  color: #e7e4e2;
+}
+
+.text-300_ {
+  color: #b1ada9;
+}
+
+.text-400_ {
+  color: #3f352c;
+}
+
+.text-500_ {
+  color: #2c2c2c;
+}
+
+.border-400 {
+  border: 1px solid #8c8477;
+}
+
+/* margin */
+.mt-22 {
+  margin-top: 22px;
+}
+.mr-22 {
+  margin-right: 22px;
+}
+
+/* flex */
+.horizon {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-end {
+  justify-content: end;
+}
+.align-center {
+  align-items: center;
+}
+
+.gap-10 {
+  gap: 10px;
+}
+
+/* event */
+#event-list.container {
+  background-image: url(../img/bg1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+section {
+  padding-top: 180px;
+  border: 2px solid red;
+}
+
+.item-box {
+  width: 344px;
+  height: 153px;
+  background: #f5f4ef;
+  box-shadow: 0px 2px 14px rgba(133, 123, 102, 0.1);
+  border-radius: 30px;
+  margin-top: 14px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0px;
+  padding: 22px 0 0 22px;
+}
+
+.period {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 22px;
+  padding: 0 0 0 22px;
+}
+
+.points {
+  font-size: 44px;
+  font-weight: 200;
+  line-height: 40px;
+  color: #b1ada9;
+}
+.dot {
+  align-self: end;
+  padding-left: 3px;
+  padding-bottom: 3px;
+}
+
+/* utilities */
+.page-icon {
+  height: 28px;
+  width: 166px;
+  border-radius: 30px;
+  padding: 10px 4px 10px 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
