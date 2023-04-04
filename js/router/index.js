@@ -54,13 +54,14 @@ const routes = [
     component: RegularCompaign,
   },
   {
-    path: '/compaign/:product',
+    path: '/compaign/:pno',
     component: CompaignLayout,
     children: [
       {
         name: 'compaign-product',
         path: '',
         component: CompaignProduct,
+        props: true,
       },
     ],
   },

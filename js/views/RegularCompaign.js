@@ -1,20 +1,23 @@
 import BaseButton from '../utilities/BaseButton.js';
 import NavButton from '../utilities/NavButton.js';
+import ProductBox from '../components/ProductBox.js';
 const RegularCompaign = {
   name: 'RegularCompaign',
   components: {
     BaseButton,
     NavButton,
+    ProductBox,
   },
   template: `
     <div id="compaign">
       <section class="vertical align-center">
         <div id="item-content">
-          <div class="item-title text-400_ mt-22">
+          <div class="item-title mt-22">
             環保集章
           </div>
-          <div class="mt-22">
-            您已累積 xx 點
+          <div class="text-black">
+            <div>您已累積 <span class="points">xx</span> 點 </div>
+            <div>點數到期日每次獲點的到期日相同嗎?</div>
           </div>
           <div class="item-brief mt-22">
             <img src="../img/icons/icon_search.png" />
@@ -44,13 +47,54 @@ const RegularCompaign = {
             </div>
           </div>
         </div>
-        <div class="horizon justify-center w-100 mt-44">
+        <div class="w-100 text-left text-400_c" :style="styles">
+          點數兌換
+        </div>
+        <product-box 
+          v-for="product in products" 
+          :key="product.id"
+          :product="product"
+        ></product-box>
+        <div class="horizon justify-center mt-44">
+          <div>
+            <base-button>點我集點</base-button>
+          </div>
+          <div class="item-description text-300_ m-22">
+            ※會員於活動期間內，攜帶空罐至指定門市，即可獲得點數，累積點數可兌換指定品項。
+          </div>
+        </div>
+        <div class="horizon justify-center w-100 mt-22">
           <nav-button>活動說明</nav-button>
           <nav-button bgColor="bg-100" textColor="text-300">點數紀錄</nav-button>
         </div>
       </section>
     </div>
   `,
+  data() {
+    return {
+      products: [
+        {
+          id: 1,
+          pno: 'abc',
+          points: 50,
+          title: '抗衰老保養技巧課程',
+          imagePath: '../img/fake_product_1.png',
+        },
+        {
+          id: 2,
+          pno: 'xyz',
+          points: 80,
+          title: '綠色天然保養品DIY課程',
+          imagePath: '../img/fake_product_2.png',
+        },
+      ],
+      styles: {
+        padding: '16px 0 0 30px',
+        fontSize: '16px',
+        fontWeight: '400',
+      },
+    };
+  },
 };
 
 export default RegularCompaign;

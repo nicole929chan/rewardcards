@@ -1,8 +1,8 @@
 const CompaignLayout = {
   name: 'CompaignLayout',
   template: `
-            <div>compaign</div>
-          `,
+    <router-view></router-view>
+  `,
 };
 
 export default CompaignLayout;

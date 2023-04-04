@@ -10,7 +10,7 @@ const EventDetail = {
   template: `
     <section class="vertical align-center">
       <div id="item-content">
-        <div class="item-title text-400_ mt-22">
+        <div class="item-title mt-22">
           {{ item.title }}
         </div>
         <div class="point-area mt-16">

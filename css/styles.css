@@ -11,7 +11,7 @@ div {
 }
 
 body {
-  background-color: #F5F4EF;
+  background-color: #f5f4ef;
 }
 
 .bg-white {
@@ -90,10 +90,23 @@ body {
   border: 1px solid #8c8477;
 }
 
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
 /* margin */
 .mt-16 {
   margin-top: 16px;
 }
+
 .mt-22 {
   margin-top: 22px;
 }
@@ -103,13 +116,26 @@ body {
 .mt-44 {
   margin-top: 44px;
 }
+.mx-22 {
+  margin: 0 22px 0 22px;
+}
+
+.m-22 {
+  margin: 22px;
+}
+.pl-22 {
+  padding-left: 22px;
+}
+.pr-22 {
+  padding-right: 22px;
+}
 
 .px-22 {
-  padding: 22px 0 22px 0;
+  padding: 0 22px 0 22px;
 }
 
 .py-22 {
-  padding: 0 22px 0 22px;
+  padding: 22px 0 22px 0;
 }
 
 .w-100 {
@@ -134,6 +160,10 @@ body {
 
 .justify-between {
   justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
 }
 
 .justify-end {
@@ -229,6 +259,7 @@ section {
   font-weight: 300;
   line-height: 22px;
   letter-spacing: 0px;
+  color: #3f352c;
 }
 
 .brief-title {
@@ -273,6 +304,27 @@ section {
   font-weight: 300;
   line-height: 16px;
   letter-spacing: 0px;
+}
+
+/*  */
+
+/* product */
+.product-box,
+.product-overlay {
+  height: 112px;
+  width: 344px;
+  border-radius: 30px;
+}
+.product-overlay {
+  background-color: #00000066;
+}
+
+.banner {
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* height: 100vh; */
+  height: 260px;
+  width: 100%;
 }
 
 /* utilities */
