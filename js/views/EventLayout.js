@@ -1,8 +1,10 @@
 const EventLayout = {
   name: 'EventLayout',
   template: `
-        <div>layout</div>
-      `,
+    <div id="event-layout" class="container">
+      <router-view></router-view>
+    </div>
+  `,
 };
 
 export default EventLayout;

@@ -9,9 +9,13 @@ const EventList = {
   template: `
     <div id="event-list" class="container">
       <section class="vertical align-center">
-        <div class="horizon justify-center gap-10">
-          <page-icon :styles="active">活動</page-icon>
-          <page-icon :styles="inactive">禮物券</page-icon>
+        <div class="horizon gap-10">
+          <page-icon :styles="active">
+            活動 <span style="align-self: center; padding-left: 6px;">{{ items.length }}</span>
+          </page-icon>
+          <div @click="toGifts">
+            <page-icon :styles="inactive">禮物券</page-icon>
+          </div>
         </div>
         <event-item v-for="item in items" :key="item.id" :item="item"></event-item>
       </section>
@@ -50,6 +54,13 @@ const EventList = {
         color: '#8C8477',
         border: '1px solid #8C8477',
       };
+    },
+  },
+  methods: {
+    toGifts() {
+      this.$router.push({
+        name: 'gifts',
+      });
     },
   },
 };

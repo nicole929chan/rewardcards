@@ -2,7 +2,7 @@ const EventItem = {
   name: 'EventItem',
   props: ['item'],
   template: `
-    <div class="item-box">
+    <div class="item-box" @click="toDetail">
       <div class="text-400 title">
         {{ item.title }}
       </div>
@@ -22,6 +22,16 @@ const EventItem = {
   computed: {
     period() {
       return this.item.s_date + ' - ' + this.item.e_date;
+    },
+  },
+  methods: {
+    toDetail() {
+      this.$router.push({
+        name: 'event-detail',
+        params: {
+          id: this.item.id,
+        },
+      });
     },
   },
 };
