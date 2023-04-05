@@ -1,8 +1,13 @@
 export default {
   state: {
-    count: 0,
+    profile: {
+      displayName: '',
+    },
+    eventList: {},
+    giftList: {},
+    record: {},
   },
-  getter: {},
+  getters: {},
   mutations: {},
   actions: {},
 };

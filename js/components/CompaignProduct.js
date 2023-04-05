@@ -1,9 +1,11 @@
 import BaseButton from '../utilities/BaseButton.js';
+import MessageBox from '../utilities/MessageBox.js';
 const CompaignProduct = {
   name: 'CompaignProduct',
   props: ['pno'],
   components: {
     BaseButton,
+    MessageBox,
   },
   template: `
     <div class="vertical align-center">
@@ -31,13 +33,49 @@ const CompaignProduct = {
         會員點數累積無法溯及既往，成為會員之前於REGAL各館的消費，恕無法累積、兌換點數。
         會員點數僅可用於兌換會員專屬之兌換券。
       </div>
-      <div style="position: absolute; bottom: 30px;">
+      <div style="position: absolute; bottom: 30px;" @click="redeem">
         <base-button>我要兌換</base-button>
       </div>
+      <message-box v-show="inProgress">
+        <template v-slot:description>
+          <div class="text-center" style="position: relative; top: -30px;">
+            <div>提醒您</div>
+            <div>點數兌換後即不可回復，點數兌換需由服務人員操作。是否使用 x 點兌換1份「抗衰老保養技巧課程」？</div>
+          </div>
+        </template>
+        <template v-slot:buttons>
+          <div @click="submit">
+            <base-button>兌換</base-button>
+          </div>
+          <div @click="cancel" class="mt-16">
+            <base-button textColor="text-400" bgColor="bg-white">取消</base-button>
+          </div>
+        </template>
+      </message-box>
+      <message-box v-show="succeed">
+        <template v-slot:icon>
+          <img src="../img/icons/icon_r.png" />
+        </template>
+        <template v-slot:title>
+          <div>兌換成功</div>
+        </template>
+        <template v-slot:description>
+          <div class="text-center" style="position: relative; top: -30px;">
+            <div>恭喜獲得 1堂「抗衰老保養技巧課程」</div>
+          </div>
+        </template>
+        <template v-slot:buttons>
+          <div @click="toGifts">
+            <base-button>查看禮物券</base-button>
+          </div>
+        </template>
+      </message-box>
     </div>
   `,
   data() {
     return {
+      inProgress: false,
+      succeed: false,
       product: {
         id: 1,
         pno: 'abc',
@@ -50,6 +88,7 @@ const CompaignProduct = {
   },
   mounted() {
     console.log('@@@', this.pno);
+    // console.log('###', this.pno);
   },
   computed: {
     bgImage() {
@@ -69,6 +108,25 @@ const CompaignProduct = {
     close() {
       this.$router.push({
         name: 'compaign',
+      });
+    },
+    redeem() {
+      // 我要兌換
+      this.inProgress = true;
+    },
+    submit() {
+      // 確認兌換 (api確認?)
+      // 假設成功兌換
+      this.inProgress = false;
+      this.succeed = true;
+    },
+    cancel() {
+      // 取消兌換
+      this.inProgress = false;
+    },
+    toGifts() {
+      this.$router.push({
+        name: 'gifts',
       });
     },
   },

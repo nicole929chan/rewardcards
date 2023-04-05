@@ -138,8 +138,20 @@ body {
   padding: 22px 0 22px 0;
 }
 
+.w-50 {
+  width: 50%;
+}
+
 .w-100 {
   width: 100%;
+}
+
+input {
+  height: 40px;
+  width: 300px;
+  border: 1px solid #E7E4E2;
+  box-sizing: border-box;
+  border-radius: 8px;
 }
 
 /* flex */
@@ -306,8 +318,6 @@ section {
   letter-spacing: 0px;
 }
 
-/*  */
-
 /* product */
 .product-box,
 .product-overlay {
@@ -349,7 +359,46 @@ section {
   font-size: 20px;
   font-weight: 300;
   height: 26px;
-  width: 50%;
+  width: 100%;
   border-radius: 16px 16px 0px 0px;
   padding: 18px 0 18px 0;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.overlay {
+  background: #000;
+  opacity: 0.5;
+}
+
+.message-box {
+  position: fixed;
+  bottom: 300px;
+  left: 16px;
+  height: 304px;
+  width: 74%;
+  border-radius: 40px;
+  padding: 32px;
+  box-shadow: 0px 2px 10px 0px #00000033;
+  margin: auto;
+}
+
+.message-title {
+  font-size: 32px;
+  font-weight: 200;
+  line-height: 40px;
+  letter-spacing: 0px;
+  color: #3f352c;
+}
+
+.message-text {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 22px;
 }

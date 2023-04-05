@@ -36,7 +36,7 @@ const EventDetail = {
         </div>
 
         <div class="horizon justify-center mt-44">
-          <div>
+          <div @click="toCredential">
             <base-button>點我集點</base-button>
           </div>
           <div class="item-description text-300_ mt-22">
@@ -45,8 +45,12 @@ const EventDetail = {
         </div>
       </div>
       <div class="horizon justify-center w-100 mt-44">
-        <nav-button>集點卡</nav-button>
-        <nav-button bgColor="bg-100" textColor="text-300">點數紀錄</nav-button>
+        <div class="w-50" @click="toHome">
+          <nav-button>集點卡</nav-button>
+        </div>
+        <div class="w-50" @click="toRecord">
+          <nav-button bgColor="bg-100" textColor="text-300">點數紀錄</nav-button>
+        </div>
       </div>
     </section>
   `,
@@ -93,6 +97,26 @@ const EventDetail = {
           }
         }
       };
+    },
+  },
+  methods: {
+    toCredential() {
+      this.$router.push({
+        name: 'event-credential',
+      });
+    },
+    toRecord() {
+      this.$router.push({
+        name: 'event-record',
+        params: {
+          id: this.$route.params.id,
+        },
+      });
+    },
+    toHome() {
+      this.$router.push({
+        name: 'home',
+      });
     },
   },
 };

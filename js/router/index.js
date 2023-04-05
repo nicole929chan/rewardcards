@@ -29,6 +29,7 @@ const routes = [
         name: 'event-credential',
         path: 'credential',
         component: EventCredential,
+        props: true,
       },
       {
         name: 'event-record',
